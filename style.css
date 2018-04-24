@@ -1,19 +1,23 @@
 html {
   font-size: 10px;
-  background: url(images/trump_bg_dark.jpg) bottom center;
-  background-size: cover;
+  background: url(images/trump_bg_dark.jpg);
+  background-repeat: repeat;
 }
-body,html {
+body {
   margin: 0px;
   padding: 0;
+  max-width:100%;
   font-family: sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .keys {
   display: flex;
   flex-direction: row;
   flex: 1;
-  min-height: 100vh;
   align-items: center;
   justify-content: center;
   font-family: Quicksand; /* similar to Apple keyboard font Vag Rounded */
