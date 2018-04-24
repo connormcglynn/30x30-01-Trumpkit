@@ -61,17 +61,17 @@
 <script>
 
 
-  window.addEventListener('keydown', function(event) {
-      const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
-      const key = document.querySelector(`.key[data-key="${event.keyCode}"]`);
-      if (!audio) return; // stops function running on non-audio rigged keys
-      audio.currentTime = 0; // rewinds to start
+  window.addEventListener('keydown', function(event) { // when key is pressed down, runs 'event' function
+      const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`); // uses keyCode[s] from keycode.info
+      const key = document.querySelector(`.key[data-key="${event.keyCode}"]`); // use backticks (` `) and ES6 $event listeners
+      if (!audio) return; // stops function running on non-audio-rigged keys
+      audio.currentTime = 0; // rewinds to start for successive key inputs
       audio.play();
       key.classList.add('playing');
       
   });
   
-  function removeTransition(event) {
+  function removeTransition(event) { // to remove border and scale effects once key is pressed and sound plays
     if (event.propertyName !== 'transform') return; // skips if not a transform
     this.classList.remove('playing');
     
