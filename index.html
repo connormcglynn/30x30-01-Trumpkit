@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>JS Drum Kit</title>
+  <title>Donald Drumkit</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 </head>
@@ -62,7 +62,7 @@
 
 
   window.addEventListener('keydown', function(event) { // when key is pressed down, runs 'event' function
-      const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`); // uses keyCode[s] from keycode.info
+      const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`); // uses keyCode(s) from keycode.info
       const key = document.querySelector(`.key[data-key="${event.keyCode}"]`); // use backticks (` `) and ES6 $event listeners
       if (!audio) return; // stops function running on non-audio-rigged keys
       audio.currentTime = 0; // rewinds to start for successive key inputs
