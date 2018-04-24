@@ -1,7 +1,7 @@
 html {
   font-size: 10px;
   background: url(images/trump_bg_dark.jpg) bottom center;
-  background-repeat: repeat-y;
+  background-size: cover;
 }
 body,html {
   margin: 0px;
