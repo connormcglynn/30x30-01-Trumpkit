@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+</head>
+<body>
+
+
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">china</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">gina</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">jina</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">schyna</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">jyna</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">chynah</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">ЧИНА</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">shyna</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound" style="font-size:8px;">CHINA</span>
+    </div>
+  </div>
+
+  <audio data-key="65" src="sounds/china1.wav"></audio>
+  <audio data-key="83" src="sounds/china2.wav"></audio>
+  <audio data-key="68" src="sounds/china3.wav"></audio>
+  <audio data-key="70" src="sounds/china4.wav"></audio>
+  <audio data-key="71" src="sounds/china5.wav"></audio>
+  <audio data-key="72" src="sounds/china6.wav"></audio>
+  <audio data-key="74" src="sounds/china11.wav"></audio>
+  <audio data-key="75" src="sounds/china8.wav"></audio>
+  <audio data-key="76" src="sounds/china10.wav"></audio>
+
+<script>
+
+
+  window.addEventListener('keydown', function(event) {
+      const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+      const key = document.querySelector(`.key[data-key="${event.keyCode}"]`);
+      if (!audio) return; // stops function running on non-audio rigged keys
+      audio.currentTime = 0; // rewinds to start
+      audio.play();
+      key.classList.add('playing');
+      
+  });
+  
+  function removeTransition(event) {
+    if (event.propertyName !== 'transform') return; // skips if not a transform
+    this.classList.remove('playing');
+    
+  }
+  
+  const keys = document.querySelectorAll('.key');
+  
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+</script>
+
+
+</body>
+</html>
