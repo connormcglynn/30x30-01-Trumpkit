@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Donald Drumkit</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand|Montserrat" rel="stylesheet">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
     </div>
     <div data-key="74" class="key">
       <kbd>J</kbd>
-      <span class="sound">ЧИНА</span>
+      <span class="cyrillic">ЧИНА</span>
     </div>
     <div data-key="75" class="key">
       <kbd>K</kbd>
@@ -44,7 +44,7 @@
     </div>
     <div data-key="76" class="key">
       <kbd>L</kbd>
-      <span class="sound" style="font-size:8px;">CHINA</span>
+      <span class="sound">(china)</span>
     </div>
   </div>
 
@@ -67,19 +67,19 @@
       if (!audio) return; // stops function running on non-audio-rigged keys
       audio.currentTime = 0; // rewinds to start for successive key inputs
       audio.play();
-      key.classList.add('playing');
+      key.classList.add('playing'); // adds transition CSS class 'playing'
       
   });
   
   function removeTransition(event) { // to remove border and scale effects once key is pressed and sound plays
-    if (event.propertyName !== 'transform') return; // skips if not a transform
-    this.classList.remove('playing');
+    if (event.propertyName !== 'transform') return; // when transform property ends
+    this.classList.remove('playing'); // removes transition CSS class 'playing'
     
   }
   
-  const keys = document.querySelectorAll('.key');
+  const keys = document.querySelectorAll('.key'); // delivers array of each key
   
-  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition)); // ES6 '=>' arrow, removes transition style
 </script>
 
 

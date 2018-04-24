@@ -33,20 +33,32 @@ body,html {
 }
 
 .playing {
-  transform: scale(1.2);
-  border-color: #ffc600;
-  box-shadow: 0 0 1rem #ffc600;
+  transform: scale(0.91);
+  border-color: #000000;
+  box-shadow: 0 0 1rem #000000;
+  background: rgba(0,0,0,0.5);
+  margin-bottom: -8px;
 }
 
 kbd {
   display: block;
   font-size: 4rem;
-  font-family: Quicksand;
+  font-family: Quicksand; /* similar to Apple keyboard font Vag Rounded */
 }
 
 .sound {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
-  letter-spacing: .1rem;
-  color: #ffc600;
+  font-weight: bolder;
+  letter-spacing: .2rem;
+  color: lightblue;
+}
+
+.cyrillic {
+  font-size:1.3rem;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: .2rem;
+  color: lightblue;
 }
