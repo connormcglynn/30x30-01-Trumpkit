@@ -76,7 +76,7 @@ kbd {
   max-width: 20%;
   height: auto;
   margin: auto;
-  padding: 0;
+  padding-top: 20px;
   opacity: 0.9;
   filter: alpha(opacity=90); /* For IE8 and earlier */
 }
